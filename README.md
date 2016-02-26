@@ -41,6 +41,8 @@ Als deze directory nog niet bestaat, maak die dan gewoon eerst aan.
 
 ## Voorbeelden
 
+**Zie ook de directory [samples](samples)**
+
 Voor 1 featuretype:
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -56,7 +58,6 @@ Voor 1 featuretype:
       </wfs:QueryExpressionText>
 </wfs:StoredQueryDescription>
 ```
-
 
 Voor een service met 2 featuretypes:
 ```
