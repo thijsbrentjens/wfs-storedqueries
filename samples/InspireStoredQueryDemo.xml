@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:StoredQueryDescription xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" id="urn:bgi:def:query:OGC-WFS::InspireStoredQueryDemo">
+      <wfs:Title xml:lang="en">GetDataset gebiedsindelingen demo</wfs:Title>
+      <wfs:Abstract xml:lang="en">Example INSPIRE Stored Query dataset returning 2 featuretypes</wfs:Abstract>
+      <wfs:Parameter name="CRS" type="xsd:string"/>
+      <wfs:Parameter name="DataSetIdCode" type="xsd:string"/>
+      <wfs:Parameter name="DataSetIdNamespace" type="xsd:string"/>
+      <wfs:Parameter name="Language" type="xsd:string"/>
+      <wfs:QueryExpressionText isPrivate="false" language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression" returnFeatureTypes="cbsgebiedsindelingen:cbsgebiedsindelingen_cbs_provincie_2012_gegeneraliseerd">
+          <wfs:Query wfs:srsName="${CRS}" wfs:typeNames="cbsgebiedsindelingen:cbsgebiedsindelingen_cbs_provincie_2012_gegeneraliseerd"/>
+      </wfs:QueryExpressionText>
+      <wfs:QueryExpressionText isPrivate="false" language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression" returnFeatureTypes="cbsgebiedsindelingen:cbsgebiedsindelingen_cbs_gemeente_2012_gegeneraliseerd">
+          <wfs:Query wfs:srsName="${CRS}" wfs:typeNames="cbsgebiedsindelingen:cbsgebiedsindelingen_cbs_gemeente_2012_gegeneraliseerd"/>
+      </wfs:QueryExpressionText>
+</wfs:StoredQueryDescription>
