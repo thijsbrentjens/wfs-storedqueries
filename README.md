@@ -41,7 +41,7 @@ Als deze directory nog niet bestaat, maak die dan gewoon eerst aan.
 
 ## Voorbeelden
 
-**Zie ook de directory [samples](samples)**
+**Zie ook de directory [data/wfs/stored_queries](data/wfs/stored_queries)**
 
 Voor 1 featuretype:
 ```
@@ -92,3 +92,26 @@ Voor: InspireStoredQueryNatura2000:
 Voor InspireStoredQueryDemo:
 [http://localhost:8080/geoserver/wfs?service=WFS&request=GetFeature&version=2.0.0&StoredQuery_ID=urn:bgi:def:query:OGC-WFS::InspireStoredQueryDemo&CRS=EPSG:4258&Language=en](http://localhost:8080/geoserver/wfs?service=WFS&request=GetFeature&version=2.0.0&StoredQuery_ID=urn:bgi:def:query:OGC-WFS::InspireStoredQueryDemo&CRS=EPSG:4258&Language=en)
 Let op: Langauge wordt genegeerd.
+
+## Security
+GeoServer kent een geavanceerd security systeem. Per service type en requests is te configureren wie er bij mag bijvoorbeeld. Voor de StoredQuery requests kan het zijn dat de Web interface van geoserver de configuratie ervan (nog) niet ondersteunt. Maar via een eenvoudig bestand is dat handmatig aan te passen.
+
+Het gaat om het tekstbestand:
+```
+{GEOSERVER_DATA_DIR}/data/security/services.properties
+```
+
+Als het niet bestaat, maak het gewoon aan en plaats het in de directory ```{GEOSERVER_DATA_DIR}/data/security```.
+
+En geef voor het service type en request een regel op waarin staat wie er wel en wie niet bij mag.
+
+Een voorbeeld om DropStoredQuery en CreateStoredQuery te blokkeren voor iedereen, behalve de Geoserver administrators (gebruikers die de ADMIN role hebben):
+
+```
+wfs.DropStoredQuery=ADMIN
+wfs.CreateStoredQuery=ADMIN
+```
+
+Dit staat ook in  [data/security/services.properties](data/security/services.properties)
+
+Zie ook de [Geoserver documentatie over security] (http://docs.geoserver.org/stable/en/user/webadmin/security/index.html) voor meer mogelijkheden.
